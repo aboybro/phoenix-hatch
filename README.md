@@ -10,9 +10,12 @@ camera — a single image made to excite an AI judge, entered in
 
 ## How it works
 
-`main.ts` (Node 22, standard library only) copies `entry.png` to
-`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`). The image is a
-deterministic 1024×1024 PNG, so both runs write identical bytes.
+`main.ts` (Node 22, standard library only) reads `entry.png`, applies a
+deterministic fire-glow enhancement — richer saturation, stronger contrast,
+warmer highlights on the flames — and writes the result to
+`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`). The output is a
+1024×1024 PNG under 1 MiB, and every step is deterministic, so both grading
+runs write identical bytes.
 
 Run it locally:
 
